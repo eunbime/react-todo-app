@@ -1,0 +1,56 @@
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 0.2rem var(--mainBlue);
+  border-radius: 0.5rem;
+  width: 18rem;
+  padding: 2rem;
+}
+
+.todo-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  word-break: break-all;
+}
+
+.todo-contents {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  word-break: break-all;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn,
+.finish-btn {
+  width: 6.5rem;
+  height: 2rem;
+  background: none;
+  border: solid 0.1rem;
+  border-radius: 0.3rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.delete-btn {
+  border-color: var(--mainRed);
+}
+
+.delete-btn:hover {
+  background-color: var(--mainRed);
+  color: var(--mainWhite);
+}
+
+.finish-btn {
+  border-color: var(--mainGreen);
+}
+
+.finish-btn:hover {
+  background-color: var(--mainGreen);
+  color: var(--mainWhite);
+}

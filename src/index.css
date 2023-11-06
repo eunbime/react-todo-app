@@ -1,0 +1,17 @@
+:root {
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainRed: #c45151;
+  --mainGreen: #4caf50;
+  --mainBlue: #2980b9;
+  --mainGray: #eee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--mainWhite);
+  color: var(--mainBlack);
+}

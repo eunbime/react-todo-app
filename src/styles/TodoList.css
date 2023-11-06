@@ -1,0 +1,10 @@
+.list-label {
+  margin-top: 1rem;
+}
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 1.9rem;
+}
