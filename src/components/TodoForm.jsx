@@ -9,7 +9,7 @@ function todoForm({
   handleSubmit,
 }) {
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleSubmit}>
       <div className="form-center">
         <div className="form-group">
           <label htmlFor="title">제목</label>
@@ -36,7 +36,7 @@ function todoForm({
           />
         </div>
       </div>
-      <button type="submit" className="submit-btn" onClick={handleSubmit}>
+      <button type="submit" className="submit-btn">
         추가하기
       </button>
     </form>
