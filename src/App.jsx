@@ -2,6 +2,7 @@ import "App.css";
 import TodoForm from "components/TodoForm";
 import TodoList from "components/TodoList";
 import { useState } from "react";
+import uuid from "react-uuid";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -25,7 +26,7 @@ function App() {
     e.preventDefault();
     if (title !== "" && contents !== "") {
       const newTodo = {
-        id: crypto.randomUUID(),
+        id: uuid(),
         title,
         contents,
         isDone: false,
@@ -42,11 +43,7 @@ function App() {
   const handleDone = (id) => {
     const isDoneTodos = todos.map((todo) => {
       if (todo.id === id) {
-        if (todo.isDone === false) {
-          return { ...todo, isDone: true };
-        } else {
-          return { ...todo, isDone: false };
-        }
+        return { ...todo, isDone: !todo.isDone };
       } else {
         return todo;
       }
@@ -56,7 +53,9 @@ function App() {
 
   return (
     <div className="main-container">
-      <h1>My Todo List</h1>
+      <header>
+        <h1>My Todo List</h1>
+      </header>
       <TodoForm
         title={title}
         contents={contents}
@@ -68,6 +67,13 @@ function App() {
         todos={todos}
         handleDelete={handleDelete}
         handleDone={handleDone}
+        listIsDone={false}
+      />
+      <TodoList
+        todos={todos}
+        handleDelete={handleDelete}
+        handleDone={handleDone}
+        listIsDone={true}
       />
     </div>
   );
